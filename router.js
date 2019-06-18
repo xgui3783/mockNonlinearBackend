@@ -3,6 +3,7 @@ const router = express.Router()
 const crypto = require('crypto')
 
 router.post('', (req, res) => {
+  console.log('depthmap computation post', req.body)
   setTimeout(() => {
     res.status(202).json({
       status_polling_url: `/v0/depth-map-computation/${crypto.randomBytes(8).toString('hex')}`
